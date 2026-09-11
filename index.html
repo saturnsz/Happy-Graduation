@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#EDECE8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Happy Graduation Rafika Ardani</title>
+    <meta name="description" content="Sebuah perayaan kecil untuk perjalanan besarmu. Selamat wisuda, sayang." />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet" />
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-left">
+            <span class="nav-label">To my favorite person</span>
+        </div>
+        <div class="nav-right">
+            <span class="nav-date">Graduated 2026</span>
+            <button class="menu-btn" id="menu-btn" aria-label="Open menu">
+                <span class="menu-btn-text">Menu</span>
+                <span class="menu-btn-dot"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Fullscreen Menu Overlay -->
+    <div class="menu-overlay" id="menu-overlay">
+        <div class="menu-overlay-inner">
+            <div class="menu-links">
+                <a href="#hero" class="menu-link" data-menu-link>
+                    <span class="menu-link-number">01</span>
+                    <span class="menu-link-text">Salam</span>
+                </a>
+                <a href="#journey" class="menu-link" data-menu-link>
+                    <span class="menu-link-number">02</span>
+                    <span class="menu-link-text">Perjalanan</span>
+                </a>
+                <a href="#messages" class="menu-link" data-menu-link>
+                    <span class="menu-link-number">03</span>
+                    <span class="menu-link-text">Kenangan</span>
+                </a>
+                <a href="#footer-cta" class="menu-link" data-menu-link>
+                    <span class="menu-link-number">04</span>
+                    <span class="menu-link-text">Perasaan</span>
+                </a>
+                <a href="#playlist" class="menu-link" data-menu-link>
+                    <span class="menu-link-number">05</span>
+                    <span class="menu-link-text">Playlist</span>
+                </a>
+            </div>
+            <div class="menu-info">
+                <div class="menu-info-block">
+                    <span class="menu-info-label">Dibuat dengan</span>
+                    <span class="menu-info-value">Penuh Kasih Sayang ♥</span>
+                </div>
+                <div class="menu-info-block">
+                    <span class="menu-info-label">Untuk</span>
+                    <span class="menu-info-value">Sayang Tersayang</span>
+                </div>
+                <div class="menu-info-block">
+                    <span class="menu-info-label">Tahun</span>
+                    <span class="menu-info-value">2026</span>
+                </div>
+            </div>
+        </div>
+        <button class="menu-close" id="menu-close" aria-label="Close menu">
+            <span>Tutup</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Main -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <!-- Floating blobs -->
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+
+            <div class="hero-content">
+                <div class="hero-top-label">
+                    <span class="hero-badge">✦ Selamat Wisuda</span>
+                </div>
+
+                <h1 class="hero-title">
+                    <div class="line-wrap">
+                        <div class="line">Happy</div>
+                    </div>
+                    <div class="line-wrap">
+                        <div class="line">Graduation,</div>
+                    </div>
+                    <div class="line-wrap">
+                        <div class="line italic-text">Pikachuww</div>
+                    </div>
+                </h1>
+
+                <p class="hero-subtitle reveal-text">
+                    I'm so incredibly proud of you and everything<br />you've
+                    accomplished.
+                </p>
+
+                <div class="hero-actions reveal-text">
+                    <button class="pill-btn" id="hero-cta">
+                        <span>Selamat ya!</span>
+                        <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Avatar -->
+            <div class="hero-avatar reveal-text">
+                <div class="avatar-ring">
+                    <img src="IMG_1913.JPG.jpeg" alt="Her Photo" id="avatar-img" onerror="
+                this.style.display = 'none';
+                this.parentElement.innerHTML =
+                  '<div class=\'avatar-placeholder\'>♥</div>';
+              " />
+                </div>
+                <div class="avatar-tag">Graduated</div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="scroll-indicator">
+                <div class="scroll-line"></div>
+                <span>Scroll</span>
+            </div>
+        </section>
+
+        <!-- Journey Section -->
+        <section class="journey-section" id="journey">
+            <div class="sticky-label">
+                <span class="vertical-text">Perjalanan</span>
+            </div>
+            <div class="journey-content">
+                <div class="journey-intro reveal-up">
+                    <p class="large-text">
+                        Qu'importent les technologies — semua begadang, semua air mata,
+                        semua lelah yang kamu rasakan...
+                        <em>semuanya terbayar</em> pada hari yang luar biasa ini.
+                    </p>
+                </div>
+                <div class="journey-items">
+                    <div class="journey-item reveal-up" data-number="01">
+                        <div class="journey-item-inner">
+                            <span class="item-num">01</span>
+                            <div class="item-content">
+                                <h3>Kerja Keras</h3>
+                                <p>
+                                    Semua begadang dan lelahmu akhirnya terbayar lunas. Kamu
+                                    hebat banget.
+                                </p>
+                            </div>
+                            <span class="item-tag">Dedikasi</span>
+                        </div>
+                    </div>
+                    <div class="journey-item reveal-up" data-number="02">
+                        <div class="journey-item-inner">
+                            <span class="item-num">02</span>
+                            <div class="item-content">
+                                <h3>Pencapaian</h3>
+                                <p>
+                                    Ini bukan akhir, tapi awal dari kesuksesanmu yang lebih
+                                    besar lagi.
+                                </p>
+                            </div>
+                            <span class="item-tag">Masa Depan</span>
+                        </div>
+                    </div>
+                    <div class="journey-item reveal-up" data-number="03">
+                        <div class="journey-item-inner">
+                            <span class="item-num">03</span>
+                            <div class="item-content">
+                                <h3>Waktu</h3>
+                                <p>
+                                    Terima kasih sudah bertahan sejauh ini. Aku akan selalu
+                                    menemanimu.
+                                </p>
+                            </div>
+                            <span class="item-tag">Bersama</span>
+                        </div>
+                    </div>
+                    <div class="journey-item reveal-up" data-number="04">
+                        <div class="journey-item-inner">
+                            <span class="item-num">04</span>
+                            <div class="item-content">
+                                <h3>Perasaan</h3>
+                                <p>
+                                    Aku sangat bangga menjadi bagian dari hari bahagiamu ini.
+                                </p>
+                            </div>
+                            <span class="item-tag">Bangga</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee Section -->
+        <section class="marquee-section">
+            <div class="marquee-track">
+                <div class="marquee-inner">
+                    <span>SELAMAT WISUDA ✦</span>
+                    <span>PROUD OF YOU ✦</span>
+                    <span>HAPPY GRADUATION ✦</span>
+                    <span>YOU DID IT ✦</span>
+                    <span>AMAZING ✦</span>
+                    <span>SELAMAT WISUDA ✦</span>
+                    <span>PROUD OF YOU ✦</span>
+                    <span>HAPPY GRADUATION ✦</span>
+                    <span>YOU DID IT ✦</span>
+                    <span>AMAZING ✦</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Messages/Cards Section -->
+        <section class="messages-section" id="messages">
+            <div class="sticky-label">
+                <span class="vertical-text">Kenangan</span>
+            </div>
+            <div class="messages-content">
+                <div class="messages-header reveal-up">
+                    <h2 class="messages-title">
+                        <div class="line-wrap">
+                            <div class="line">Hal-hal yang</div>
+                        </div>
+                        <div class="line-wrap">
+                            <div class="line">aku syukuri</div>
+                        </div>
+                    </h2>
+                    <p class="messages-sub reveal-text">
+                        Karena bersamamu adalah privilege terbesar dalam hidupku.
+                    </p>
+                </div>
+
+                <div class="cards-grid">
+                    <div class="kcard reveal-up">
+                        <div class="kcard-number">✦</div>
+                        <h3 class="kcard-title">Senyummu</h3>
+                        <p class="kcard-text">
+                            Setiap kali kamu senyum, duniaku terasa lebih cerah dari
+                            biasanya.
+                        </p>
+                        <div class="kcard-footer">
+                            <span class="kcard-tag">Moments</span>
+                        </div>
+                    </div>
+                    <div class="kcard reveal-up">
+                        <div class="kcard-number">✦</div>
+                        <h3 class="kcard-title">Semangatmu</h3>
+                        <p class="kcard-text">
+                            Cara kamu berjuang menginspirasi aku setiap hari tanpa henti.
+                        </p>
+                        <div class="kcard-footer">
+                            <span class="kcard-tag">Inspired</span>
+                        </div>
+                    </div>
+                    <div class="kcard reveal-up">
+                        <div class="kcard-number">✦</div>
+                        <h3 class="kcard-title">Tawamu</h3>
+                        <p class="kcard-text">
+                            Tawa lepasmu adalah suara paling indah yang pernah aku dengar.
+                        </p>
+                        <div class="kcard-footer">
+                            <span class="kcard-tag">Joy</span>
+                        </div>
+                    </div>
+                    <div class="kcard kcard-large reveal-up">
+                        <div class="kcard-number">✦</div>
+                        <h3 class="kcard-title">Perjuanganmu</h3>
+                        <p class="kcard-text">
+                            Semua usahamu selama ini adalah bukti betapa luar biasanya kamu.
+                            Dan hari ini, semuanya terbayar.
+                        </p>
+                        <div class="kcard-footer">
+                            <span class="kcard-tag">Achievement</span>
+                            <svg class="kcard-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Playlist Section -->
+        <section class="playlist-section" id="playlist">
+            <div class="sticky-label">
+                <span class="vertical-text">Playlist</span>
+            </div>
+            <div class="playlist-content">
+                <div class="playlist-header reveal-up">
+                    <h2 class="playlist-title">
+                        <div class="line-wrap">
+                            <div class="line">Melodi untukmu</div>
+                        </div>
+                    </h2>
+                    <p class="playlist-sub reveal-text">
+                        Lagu-lagu yang mengingatkanku padamu dan perjalanan kita.
+                    </p>
+                </div>
+                <div class="playlist-embed reveal-up">
+                    <iframe style="border-radius: 16px"
+                        src="https://open.spotify.com/embed/playlist/2FrmaW09IkWgLVzsBrXOpm?utm_source=generator&theme=0"
+                        width="100%" height="450" frameborder="0" allowfullscreen="" allow="
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                fullscreen;
+                picture-in-picture;
+              " loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Footer Section -->
+        <section class="footer-cta" id="footer-cta">
+            <div class="footer-cta-content">
+                <div class="footer-cta-label reveal-up">Pesan Terakhir</div>
+                <h2 class="footer-cta-title">
+                    <div class="line-wrap">
+                        <div class="line">Mari rayakan</div>
+                    </div>
+                    <div class="line-wrap">
+                        <div class="line">langkah selanjutnya</div>
+                    </div>
+                    <div class="line-wrap">
+                        <div class="line italic-text">bersama.</div>
+                    </div>
+                </h2>
+                <div class="footer-cta-actions reveal-up">
+                    <button class="pill-btn pill-btn--light" id="love-btn">
+                        <span>I Love You</span>
+                        <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                    <button class="pill-btn pill-btn--outline" id="always-btn">
+                        <span>Always & Forever</span>
+                    </button>
+                </div>
+            </div>
+            <div class="footer-cta-bg-text" aria-hidden="true">Love</div>
+        </section>
+    </main>
+
+    <!-- Bottom Footer -->
+    <footer class="bottom-footer">
+        <div class="bottom-footer-left">
+            © 2026 Dibuat dengan penuh kasih sayang.
+        </div>
+        <div class="bottom-footer-right">Untuk perempuanku yang tersayang ♥</div>
+    </footer>
+
+    <!-- Heart explosion overlay -->
+    <div class="hearts-container" id="hearts-container"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
